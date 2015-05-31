@@ -62,6 +62,8 @@ My first repo
 	- 两个单词之间以换行分隔
 
 - 生成Word类:
+	友元:
+	- WordCollection类
 	私有成员变量:
 	- word 单词
 	- all 音标解释例句
@@ -73,7 +75,13 @@ My first repo
 	- 设定wordLevel
 	- 重载 == 算符，只要word相等就返回true
 
-
+- 生成WordCollection类:
+	私有成员变量:
+	- vector<Word*>
+	公有方法:
+	- 初始化函数
+	- 拷贝构造函数
+	- 析构函数
 
 
 

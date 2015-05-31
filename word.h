@@ -1,10 +1,15 @@
+#ifndef WORD_H
+#define WORD_H
+
 #include <iostream>
 #include <vector>
 #include <string>
+#include "WordCollection.h"
 using namespace std;
 
 class Word
 {
+	friend class WordCollection;
 private:
 	string word; // word name
 	string all;  // word all
@@ -18,3 +23,5 @@ public:
 	void setWordLevel(int level);
 	bool operator==(Word& word);
 };
+
+#endif
