@@ -3,19 +3,18 @@
 #include <string>
 using namespace std;
 
-class word
+class Word
 {
 private:
-	string wordName; // word name
-	string wordPron; // word pronunciation
-	// make these three a struct ? 
-	string wordPS; // word part of speech
-	string trans; // word translation
-	string sentence; // word sentence
-
+	string word; // word name
+	string all;  // word all
 	int wordLevel; // raw grey or done
 public:
-	word();
-	~word();
-	
+	Word(string word, string all, string wordLevel);
+	Word(Word& word);
+	string getWord();
+	string getAll();
+	int getWordLevel();
+	void setWordLevel(int level);
+	bool operator==(Word& word);
 };

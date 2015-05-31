@@ -10,4 +10,4 @@ with open("Output.txt", 'w') as outputFile:
 				else:
 					outputFile.write(char)
 				temp = char
-			outputFile.write("\n")
+			outputFile.write("0\n\n")

@@ -58,6 +58,27 @@ My first repo
 - 处理DictFile为Output.txt:
 	- 第一行为单词
 	- 第二行为解释
+	- 第三行为熟练度（初识为0）
 	- 两个单词之间以换行分隔
+
+- 生成Word类:
+	私有成员变量:
+	- word 单词
+	- all 音标解释例句
+	- wordLevel 熟练度
+	公有方法：
+	- 初始化函数，接string, string, int
+	- 拷贝构造函数
+	- 返回成员变量的三个函数
+	- 设定wordLevel
+	- 重载 == 算符，只要word相等就返回true
+
+
+
+
+
+
+
+
 
 
