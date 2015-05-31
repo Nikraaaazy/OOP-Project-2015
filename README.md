@@ -53,6 +53,11 @@ My first repo
 	   
 	注：部分格式可能仍存在问题
 
+### Day 2
 
+- 处理DictFile为Output.txt:
+	- 第一行为单词
+	- 第二行为解释
+	- 两个单词之间以换行分隔
 
 
