@@ -13,20 +13,22 @@ WordCollection::WordCollection(string path)
 
 	while(!in.eof())
 	{
-		cin >> word;
-		cin >> all;
-		cin >> level;
-		cin >> temp;
+		in >> word;
+		in >> all;
+		in >> level;
+		in >> temp;
 		Word* next = new Word(word, all, level);
 		collection.push_back(next);
 	}
 
 	in.close();
+	No=0;
 }
 
 WordCollection::WordCollection(WordCollection& collection)
 {
 	this -> collection = collection.collection;
+	this -> No = collection.num;
 }
 
 WordCollection::~WordCollection()
