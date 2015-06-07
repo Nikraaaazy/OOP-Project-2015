@@ -83,8 +83,13 @@ My first repo
 	- 拷贝构造函数
 	- 析构函数
 
+### Day 3
 
-
+- 修改了WordCollection类：
+	增加一个WordCollection指针名为instance负责管理读入的所有单词；新增getWordCollection、push、size、isEmpty、next函数便于测试时进行单词管理。
+- WordCollectionFactory
+	新增了WordCollectionFactory类负责创建测试时所使用的单词集合。
+- WordTest
 
 
 
