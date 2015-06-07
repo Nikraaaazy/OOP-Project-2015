@@ -15,6 +15,7 @@ private:
 	string all;  // word all
 	int wordLevel; // raw grey or done
 public:
+	Word(){}
 	Word(string word, string all, string wordLevel);
 	Word(Word& word);
 	string getWord();
