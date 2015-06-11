@@ -1,5 +1,10 @@
 #include "Word.h"
 
+Word::Word()
+{
+
+}
+
 Word::Word(string word, string all, int wordLevel)
 {
 	this -> word = word;

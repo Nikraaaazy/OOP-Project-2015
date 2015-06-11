@@ -4,32 +4,35 @@
 using namespace std;
 class WordCollectionFactory{
 	public:
-		WordCollectionFactory(){
-			collection=WordCollection::instance->getWordCollection();
+		WordCollectionFactory()
+		{
+			collection = WordCollection::instance->getWordCollection();
 		}
-		~WordCollectionFactory(){
-			if(!collection){
-				delete collection;
-			}
-		}
-		WordCollection* create(int num){
-			int newword=num/3;
-			int oldword=num-oldword;
-			WordCollection* collections=new WordCollection;
-			for(vector<Word*>::size_type i=0;i<collection.size();++i){
-				if(collection[i]->getWordLevel()>0){
-					if(oldword){
+
+		WordCollection* create(int num)
+		{
+			int newWord = num/3;
+			int oldWord = num-newWord;
+			WordCollection* collections = new WordCollection;
+			for(vector<Word*>::size_type i = 0; i < collection.size(); ++i)
+			{
+				if(collection[i]->getWordLevel()>0)
+				{
+					if(oldWord)
+					{
 						collections->push(collection[i]);
-						oldword--;
+						oldWord--;
 					}
-					else if(!newword) break;
+					else if(!newWord) break;
 				}
-				else{
-					if(newword){
+				else
+				{
+					if(newWord)
+					{
 						collections->push(collection[i]);
-						newword--;
+						newWord--;
 					}
-					else if(!oldword) break;
+					else if(!oldWord) break;
 				}
 			}
 			return collections;

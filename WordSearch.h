@@ -6,15 +6,18 @@
 //#include "  "
 #include <iostream>
 #include <cstring>
+#include <vector>
+#include "Word.h"
+using namespace std;
 
-class wordSearch
+class WordSearch
 {
 	private:
 		int Maxnum;
 		string TargetWord;
+		vector<Word*> collection;
 	public:
-		void getMaxnum(int x);
-		void getTargetWord(string w);
+		WordSearch(string word);
 		void binarySearch();
 };
 

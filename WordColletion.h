@@ -12,9 +12,9 @@ class WordCollection
 {
 private:
 	vector<Word*> collection;
-	int No;///背到第几个单词了 
+	int No;///鑳屽埌绗嚑涓崟璇嶄簡 
 public:
-	static WordCollection* instance;///唯一的一个存储了所有单词的collection 
+	static WordCollection* instance;///鍞竴鐨勪竴涓瓨鍌ㄤ簡鎵�鏈夊崟璇嶇殑collection 
 	WordCollection(){
 		No=0;
 	}
@@ -25,7 +25,7 @@ public:
 		return collection;
 	}
 	void push(Word* s){
-		collection->push_back(s);
+		collection.push_back(s);
 	}
 	int size(){
 		int s=(int)collection.size();
@@ -42,5 +42,5 @@ public:
 		else return NULL;
 	}
 };
-WordCollection::WordCollection* instance=new WordCollection("Output.txt")
+WordCollection* WordCollection::instance=new WordCollection("Output.txt");
 #endif

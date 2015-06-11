@@ -4,19 +4,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "WordCollection.h"
 using namespace std;
 
 class Word
 {
-	friend class WordCollection;
 private:
 	string word; // word name
 	string all;  // word all
 	int wordLevel; // raw grey or done
 public:
-	Word(){}
-	Word(string word, string all, string wordLevel);
+	Word();
+	Word(string word, string all, int wordLevel);
 	Word(Word& word);
 	string getWord();
 	string getAll();
