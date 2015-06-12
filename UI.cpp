@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
+#include <cctype>
+#include <algorithm>
+
 #include "Word.h"
 #include "WordCollection.h"
 #include "WordCollectionFactory.h"
 #include "WordSearch.h"
 #include "WordTest.h"
-
+#include "WordExtraction.h"
 using namespace std;
 
 int main()
@@ -15,7 +18,7 @@ int main()
 	cout << "Welcome to my domain" << endl << endl;
 	cout << "To search, input search" << endl;
 	cout << "To study, input study" << endl;
-
+	cout << "To extract from file, input extract" << endl;
 
 	cout << "To exit, input exit" << endl;
 	cout << endl;
@@ -27,6 +30,7 @@ int main()
 		{
 			cout << "search: ";
 			cin >> word;
+			transform(word.begin(), word.end(), word.begin(), ::tolower);
 			WordSearch* search = new WordSearch(word);
 			search -> binarySearch();
 			delete search;
@@ -41,6 +45,15 @@ int main()
 			WordTest* test = new WordTest(num);
 			test -> Test();
 			delete test;
+		}
+		else if (command == "extract")
+		{
+			string path;
+			cout << "Your file path: ";
+			cin >> path;
+			WordExtraction* extractor = new WordExtraction(path);
+			extractor -> extract();
+			cout << "Explaination file exported at Output-" + path << endl << endl;
 		}
 		else if (command == "exit")
 		{

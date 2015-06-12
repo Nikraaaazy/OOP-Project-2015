@@ -87,11 +87,18 @@ My first repo
 
 - 修改了WordCollection类：
 	增加一个WordCollection指针名为instance负责管理读入的所有单词；新增getWordCollection、push、size、isEmpty、next函数便于测试时进行单词管理。
+
 - WordCollectionFactory
 	新增了WordCollectionFactory类负责创建测试时所使用的单词集合。
+
 - WordTest
 
+### Day 4
 
-
+- 完成了UI 查询 学习 提取功能
+	- 新增UI.cpp，管理程序界面
+	- 新增WordExtraction类，负责对文件提取生词并将释义输出到新文件
+	- debug: 修改了词库，将大写转换为小写
+	- 支持大写输入
 
 

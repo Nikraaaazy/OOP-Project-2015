@@ -8,17 +8,17 @@
 WordSearch::WordSearch(string word)
 {
 	collection = WordCollection::instance -> getWordCollection();
-	Maxnum = WordCollection::instance -> size();
+	Maxnum = WordCollection::totalNum;
 	TargetWord = word;
 }
 
 void WordSearch::binarySearch()
 {
 	//do something
-	int l = 1, r = Maxnum;
+	int l = 0, r = Maxnum;
 	int m = (l + r) / 2;
 	bool found = false;
-	while (r - l > 10)
+	while (l <= r)
 	{
 		if ((collection[m] -> getWord()) == TargetWord)
 		{
@@ -31,16 +31,6 @@ void WordSearch::binarySearch()
 			l = m + 1;
 		m = (l + r) / 2;
 	}
-	if (!found)
-		for (int i = l; i <= r; i++)
-		{
-			if ((collection[i] -> getWord()) == TargetWord)
-			{
-				m = i;
-				found = true;
-				break;
-			}
-		}
 	if (found)
 		cout << (collection[m] -> getAll()) << endl;
 	else

@@ -18,6 +18,7 @@ public:
 	static WordCollection* instance;///唯一的一个存储了所有单词的collection
 	static void saveProgress(string path);
 	static string path;
+	static int totalNum;
 	WordCollection() {
 		No = 0;
 	}

@@ -12,13 +12,13 @@ using namespace std;
 
 class WordSearch
 {
-	private:
-		int Maxnum;
-		string TargetWord;
-		vector<Word*> collection;
-	public:
-		WordSearch(string word);
-		void binarySearch();
+private:
+	int Maxnum;
+	string TargetWord;
+	vector<Word*> collection;
+public:
+	WordSearch(string word);
+	void binarySearch();
 };
 
 #endif

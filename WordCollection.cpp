@@ -4,6 +4,8 @@
 
 string WordCollection::path = "Output.txt";
 
+int WordCollection::totalNum = 21451;
+
 WordCollection* WordCollection::instance = new WordCollection(WordCollection::path);
 WordCollection::WordCollection(string path)
 {
@@ -66,7 +68,7 @@ void WordCollection::saveProgress(string path)
 
 	vector<Word*> collection = WordCollection::instance -> getWordCollection();
 
-	for (vector<Word*>::size_type i = 0; i < collection.size(); i++)
+	for (int i = 0; i < totalNum; i++)
 	{
 		out << (collection[i] -> getWord()) << endl;
 		out << (collection[i] -> getAll()) << endl;
