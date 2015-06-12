@@ -24,7 +24,9 @@ void WordExtraction::extract()
 	string temp;
 	vector<Word*> collection = WordCollection::instance -> getWordCollection();
 	bool found = false;
+	bool first = false;
 	int counter = 0;
+	vector<string> q;
 
 	while(in >> temp)
 	{
@@ -40,6 +42,9 @@ void WordExtraction::extract()
 				found = true;
 				index = m;
 				counter ++;
+				if (find(q.begin(), q.end(), temp) == q.end())
+					first = true;
+				q.push_back(temp);
 				break;
 			}
 			else if (temp > collection[m] -> getWord())
@@ -47,13 +52,14 @@ void WordExtraction::extract()
 			else if (temp < collection[m] -> getWord())
 				r = m - 1;
 		}
-		if (found)
+		if (found && first)
 		{
 			out << "******** Word No." << counter << " ********" << endl;
 			out << collection[index] -> getWord() << endl;
 			out << collection[index] -> getAll() << endl;
 			out << endl;
 			found = false;
+			first = false;
 		}
 
 	}
