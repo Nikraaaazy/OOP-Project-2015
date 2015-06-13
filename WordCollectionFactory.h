@@ -2,42 +2,42 @@
 #define WORDCOLLECTIONFACTORY_H
 #include "WordCollection.h"
 using namespace std;
-class WordCollectionFactory{
-	public:
-		WordCollectionFactory()
-		{
-			collection = WordCollection::instance->getWordCollection();
-		}
+class WordCollectionFactory {
+public:
+	WordCollectionFactory()
+	{
+		collection = WordCollection::instance->getWordCollection();
+	}
 
-		WordCollection* create(int num)
+	WordCollection* create(int num)
+	{
+		int newWord = num / 3;
+		int oldWord = num - newWord;
+		WordCollection* collections = new WordCollection;
+		for (vector<Word*>::size_type i = 0; i < collection.size(); ++i)
 		{
-			int newWord = num/3;
-			int oldWord = num-newWord;
-			WordCollection* collections = new WordCollection;
-			for(vector<Word*>::size_type i = 0; i < collection.size(); ++i)
+			if (collection[i]->getWordLevel() > 0)
 			{
-				if(collection[i]->getWordLevel()>0)
+				if (oldWord)
 				{
-					if(oldWord)
-					{
-						collections->push(collection[i]);
-						oldWord--;
-					}
-					else if(!newWord) break;
+					collections->push(collection[i]);
+					oldWord--;
 				}
-				else
-				{
-					if(newWord)
-					{
-						collections->push(collection[i]);
-						newWord--;
-					}
-					else if(!oldWord) break;
-				}
+				else if (!newWord) break;
 			}
-			return collections;
+			else
+			{
+				if (newWord)
+				{
+					collections->push(collection[i]);
+					newWord--;
+				}
+				else if (!oldWord) break;
+			}
 		}
-	private:
-		vector<Word*> collection;
+		return collections;
+	}
+private:
+	vector<Word*> collection;
 };
 #endif

@@ -9,6 +9,7 @@
 #include "WordSearch.h"
 #include "WordTest.h"
 #include "WordExtraction.h"
+#include "WordRelative.h"
 using namespace std;
 
 int main()
@@ -16,11 +17,13 @@ int main()
 	string command;
 	string word;
 	cout << "Welcome to my domain" << endl << endl;
-	cout << "To search, input search" << endl;
-	cout << "To study, input study" << endl;
-	cout << "To extract from file, input extract" << endl;
 
-	cout << "To exit, input exit" << endl;
+	cout << "To find help, type help" << endl;
+	cout << "To search, type search" << endl;
+	cout << "To study, type study" << endl;
+	cout << "To extract from file, type extract" << endl;
+	cout << "To generate word relative map, type map" << endl;
+	cout << "To exit, type exit" << endl;
 	cout << endl;
 
 	while (1)
@@ -53,7 +56,29 @@ int main()
 			cin >> path;
 			WordExtraction* extractor = new WordExtraction(path);
 			extractor -> extract();
+			delete extractor;
 			cout << "Explaination file exported at Output-" + path << endl << endl;
+		}
+		else if (command == "map")
+		{
+			string word;
+			cout << "Your word: ";
+			cin >> word;
+			cout << word << " relates to : " << endl;
+			WordRelative* relative = new WordRelative(word);
+			relative -> generateRelative();
+			delete relative;
+			cout << endl;
+		}
+		else if (command == "help")
+		{
+			cout << "To find help, type help" << endl;
+			cout << "To search, type search" << endl;
+			cout << "To study, type study" << endl;
+			cout << "To extract from file, type extract" << endl;
+			cout << "To generate word relative map, type map" << endl;
+			cout << "To exit, type exit" << endl;
+			cout << endl;
 		}
 		else if (command == "exit")
 		{
