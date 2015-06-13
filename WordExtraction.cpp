@@ -18,8 +18,9 @@ void WordExtraction::extract()
 	ifstream in;
 	ofstream out;
 
-	in.open(inputPath);
-	out.open("Output-" + inputPath);
+	in.open(inputPath.c_str());
+	string Output="Output-" + inputPath;
+	out.open(Output.c_str());
 
 	string temp;
 	vector<Word*> collection = WordCollection::instance -> getWordCollection();

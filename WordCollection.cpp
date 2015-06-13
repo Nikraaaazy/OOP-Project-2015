@@ -20,7 +20,7 @@ WordCollection::WordCollection(string path)
 	string l;
 	string temp;
 
-	in.open(path);
+	in.open(path.c_str());
 
 	while (!in.eof())
 	{
@@ -64,7 +64,7 @@ WordCollection::~WordCollection()
 void WordCollection::saveProgress(string path)
 {
 	ofstream out;
-	out.open(path);
+	out.open(path.c_str());
 
 	vector<Word*> collection = WordCollection::instance -> getWordCollection();
 

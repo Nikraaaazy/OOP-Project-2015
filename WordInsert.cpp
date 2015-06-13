@@ -5,18 +5,18 @@ void WordInsert::Get_in(){
 	ifstream fin;
 	fin.open(path);
 	string word;
-	while(geiline(fin,word)){
-		if(word[0]=="+"){
+	while(getline(fin,word)){
+		if(word[0]=='+'){
 			int size=(int)word.size();
 			string newword=word.substr(1,size-1);
 			string meaning;
-			for(i=0;i<100;i++){
+			for(int i=0;i<100;i++){
 				string input;
 			    getline(fin,input);
-			    if(input[0]=="#"&&input[0]=="&"){
+			    if(input[0]=='#'){
 			    	meaning+=input;
 			    }
-			    else if(input[0]=="$"){
+			    else if(input[0]=='$'){
 			    	Word* next=new Word(newword,meaning,0);
 			    	collection->push(next);
 			    	break;

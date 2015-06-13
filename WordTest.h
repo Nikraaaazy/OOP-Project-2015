@@ -64,9 +64,47 @@ public:
 		cout << "Mission Accomplished" << endl;
 		cout << endl;
 	}
+	void Test(WordCollection*);
 private:
 	WordCollectionFactory* fac;
 	WordCollection* collections;
 	int WordNumber;
 };
+void WordTest::Test(WordCollection* kas){
+	    int count = 1;
+		Word* s = new Word;
+		while (s)
+		{
+			s = kas -> next();
+			if (!s)
+				break;
+			string word = s -> getWord();
+			cout << endl << "******** Question " <<  count << "********" << endl;
+			cout << word << endl;
+			char* input = new char[10];
+			cin >> input;
+			if (input[0] == 'Y')
+			{
+				int level = s -> getWordLevel();
+				s -> setWordLevel(++level);
+				string mean = s -> getAll();
+				cout << mean << endl;
+			}
+			else if (input[0] == 'N')
+			{
+				int level = s -> getWordLevel();
+				if ((s -> getWordLevel()) > 0)
+					s -> setWordLevel(--level);
+				string mean = s -> getAll();
+				cout << mean << endl;
+				kas -> push(s);
+				cout << endl;
+
+			}
+			count ++;
+		}
+		cout << endl;
+		cout << "Mission Accomplished" << endl;
+		cout << endl;
+}
 #endif

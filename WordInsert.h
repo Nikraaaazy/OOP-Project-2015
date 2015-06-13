@@ -7,7 +7,7 @@
 using namespace std;
 class WordInsert{
 	private:
-		char* path;
+		const char* path;
 		WordCollection* collection;
 	public:
 		WordInsert(){
@@ -26,6 +26,9 @@ class WordInsert{
 		void Get_in();
 		WordCollection* getWordCollection(){
 			return collection;
+		}
+		int size(){
+			return collection->size();
 		}
 };
 #endif
